@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <br>
+    <h1>{% block title %} <center>Welcome to UNY Library</center> {% endblock %}</h1>
+    <br>
+    <div class="container">
+        <div class="row" style="margin-bottom: 20px;">
+          <div class="col-sm">
+            <!-- -->
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://books.google.com/books/publisher/content/images/frontcover/qQVnDwAAQBAJ?fife=w200-h300" alt="Card image cap" style="height: 250px;">
+                <div class="card-body">
+                  <h5 class="card-title">PULANG (unedited version)</h5>
+                  <p class="card-text">Sebuah kisah tentang perjalanan pulang, melalui pertarungan demi pertarungan, untuk memeluk erat semua kebencian dan rasa sakit." </p>
+                  <a href="#" class="btn btn-primary">Pinjam</a>
+                </div>
+              </div>
+            <!-- -->
+          </div>
+          <div class="col-sm">
+            <!-- -->
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://books.google.com/books/publisher/content/images/frontcover/RX-7CwAAQBAJ?fife=w200-h300" alt="Card image cap" style="height: 250px;">
+                <div class="card-body">
+                  <h5 class="card-title">Conan: Membongkar Kedok Black Organization</h5>
+                  <p class="card-text">Conan getol memburu Komplotan Jubah Hitam atau Black Organization demi ingin mencari penawar obat APTX 4869. Obat yang membuatnya mengecil. </p>
+                  <a href="#" class="btn btn-primary">Pinjam</a>
+                </div>
+              </div>
+            <!-- -->
+          </div>
+          <div class="col-sm">
+            <!-- -->
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://books.google.com/books/publisher/content/images/frontcover/8dJiDwAAQBAJ?fife=w200-h300" alt="Card image cap" style="height: 250px;">
+                <div class="card-body">
+                  <h5 class="card-title">Jangan Menoleh: Karena Merinding Itu Peringatan</h5>
+                  <p class="card-text">Merinding itu peringatan. Karena indra manusia tidak selalu apa yang bisa dilihat oleh mata. Sebuah cerita pendek tentang seorang pria yang</p>
+                  <a href="#" class="btn btn-primary">Pinjam</a>
+                </div>
+              </div>
+            <!-- -->
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <!-- -->
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Pinjam</a>
+                </div>
+              </div>
+            <!-- -->
+          </div>
+          <div class="col-sm">
+            <!-- -->
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Pinjam</a>
+                </div>
+              </div>
+            <!-- -->
+          </div>
+          <div class="col-sm">
+            <!-- -->
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Pinjam</a>
+                </div>
+              </div>
+            <!-- -->
+          </div>
+        </div>
+      </div>
+    {% for post in posts %}
+        <div class="col-lg-3">
+            <div aria-hidden="true" style="color:black; height: 400px; max-width: 280px; border: 1px solid black;margin: 10px;">
+                <a href="{{ url_for('detail', buku_id=data['id']) }}"><img aria-hidden="true" style="max-height: 10px;"></a>
+                <marquee scrollamount="5">{{ data['title'] }}</marquee>
+                <p>Penulis : {{ data['author'] }}</p>
+                <p>Penerbit : {{ data['publisher'] }}</p>
+                <span>{{ data['rating'] }}</span>
+                <span>{{ data['price'] }}</span>
+                </div>
+        </div>
+    {% endfor %}
+{% endblock %}
